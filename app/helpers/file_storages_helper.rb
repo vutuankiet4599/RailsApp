@@ -1,0 +1,2 @@
+module FileStoragesHelper
+end
