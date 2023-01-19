@@ -1,4 +1,4 @@
-
+require 'rack/mime'
 class FileStoragesController < ApplicationController
   def index
     @file_storages = FileStorage.all
@@ -25,9 +25,8 @@ class FileStoragesController < ApplicationController
 
   def download
     @file_storage = FileStorage.find(params[:id])
-    send_file @file_storage.attachment.path, :type => @file_storage.attachment.content_type, :filename => @file_storage.name, :disposition => 'attachment'
-
-    # redirect_to file_storages_path, notice: 'Successfully downloaded.'
+    extension = Rack::Mime::MIME_TYPES.invert[@file_storage.attachment.content_type]
+    send_file @file_storage.attachment.path, :type => @file_storage.attachment.content_type, :filename => @file_storage.name+"#{extension}", :disposition => 'attachment'
   end
 
   private   
