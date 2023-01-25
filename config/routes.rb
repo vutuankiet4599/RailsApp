@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'main#home'
+  devise_for :users
   # get 'file_storages/index'
   # get 'file_storages/new'
   # get 'file_storages/create'
