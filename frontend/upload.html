@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ファイルをアップロードする</title>
+    <link rel="stylesheet" href="./upload.css">
+</head>
+<body>
+
+
+<form action method="post">
+  
+  <h1><strong>ファイルをアップロード</strong></h1>
+  
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <input type="text" name="title" id="title" class="form-controll"/>
+  </div>
+  <div class="form-group">
+    <label for="caption">キャプション</label>
+    <input type="text" name="caption" id="caption" class="form-controll"/>
+  </div>
+  
+  <div class="form-group file-area">
+        <label for="file">ファイル</label>
+    <input type="file" name="files" id="files" required="required" multiple="multiple"/>
+  </div>
+  
+  <div class="form-group">
+    <button type="submit">アップロード</button>
+  </div>
+  
+</form>
+</body>
