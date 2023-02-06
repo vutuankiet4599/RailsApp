@@ -1,41 +1,29 @@
-<div class="container">   
-<% if !@file_storage.errors.empty? %>   
-   <div>   
-         
-      <ul>   
-         <% @file_storage.errors.full_messages.each do |msg| %>   
-            <li><%= msg %></li>   
-         <% end %>      </ul>   
-         
-   </div>   
-<% end %>   
-  
-<div>   
-   <%= form_for @file_storage, html: { multipart: true } do |f| %>   
-      <%= f.label :name %>   
-      <%= f.text_field :name %>   
-      <br><br>   
-      <%= f.label :attachment %>   
-      <%= f.file_field :attachment %>   
-      <br>   
-      <%= f.submit "Save" %>   
+<div class="container bg-light w-25">   
+   <% if !@file_storage.errors.empty? %>   
+      <div>   
+            
+         <ul>   
+            <% @file_storage.errors.full_messages.each do |msg| %>   
+               <li><%= msg %></li>   
+            <% end %>      </ul>   
+            
+      </div>   
    <% end %>   
-</div>   
 
-<div class="container">
- 
- <br>
- 
-<div class="row">
- 
-        <div class="col-md-3">
- 
-            <a href="#" class="btn btn-effets btn-primary "><span>Download</span></a>
- 
-        </div>
- 
-    </div>
- 
- 
-</div>
+   <h2>New Book</h2>
+   <%= form_for @file_storage, html: { multipart: true } do |f| %>   
+      <div class="form-group">
+         <%= f.label :name %>   
+         <%= f.text_field :name, class: "form-control" %>   
+      </div>
+      <div class="form-group">
+         <%= f.label :attachment %>   
+         <%= f.file_field :attachment, class: "form-control" %>  
+      </div>
+      <div class="form-group">
+         <%= f.submit "Save", :class => "form-control btn btn-primary" %>   
+      </div>       
+   <% end %>   
+
+   <%= link_to "Turn back to book list", "/file_storages", :method => :get, class: "btn btn-secondary" %>
 </div>  
