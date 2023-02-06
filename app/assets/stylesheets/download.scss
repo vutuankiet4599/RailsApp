@@ -1,0 +1,60 @@
+
+ 
+.btn-effets{
+ 
+    border-radius: 0;
+ 
+    position: relative;
+ 
+    color: #fff;
+ 
+    border:1px solid transparent;
+ 
+    text-transform: uppercase;
+ 
+    transition: all 0.40s ease 0s;
+ 
+}
+ 
+.btn-effets:after{
+ 
+    content: "\f019";
+ 
+    font-family: fontawesome;
+ 
+    position: absolute;
+ 
+    right: 6px;
+ 
+    top: -4px;
+ 
+    opacity: 0;
+ 
+    color: #fff;
+ 
+    transition: all 0.40s ease 0s;
+ 
+}
+ 
+.btn-effets:hover:after{
+ 
+    top:40%;
+ 
+    opacity: 5;
+ 
+}
+ 
+.btn-effets span{
+ 
+    display: block;
+ 
+    transition: all 0.70s linear 0s;
+ 
+}
+ 
+.btn-effets:hover span{
+ 
+    transform: translate(-9px);
+ 
+}
+ 
