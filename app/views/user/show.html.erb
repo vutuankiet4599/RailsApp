@@ -1,0 +1,28 @@
+<% user = User.first %>
+<div class="container mx-auto" style="background-color: #D2C6C3; text-align: center; border-radius: 20px">
+    <h1>User information</h1>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-6">
+                <% if user.name %>
+                    <h5 class="card-title d-inline-block">Name: </h5>
+                    <p class="card-text d-inline-block"><%= user.name %></p> <br/>
+                <% end %>
+                <% if user.age %>
+                    <h5 class="card-title d-inline-block">Age: </h5>
+                    <p class="card-text d-inline-block"><%= user.age %></p> <br/>
+                <% end %>
+                <h4 class="card-title">Contact with me: </h4>
+                <p class="card-text"><%= user.email %></p>
+            </div>
+            <div class="col-md-6">
+                <div style="margin-bottom: 5px;">
+                    <%= button_to "Edit account", "#", :method => :get, class: "btn btn-primary" %>
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <%= button_to "Back to list file", file_storages_url, :method => :get, class: "btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
