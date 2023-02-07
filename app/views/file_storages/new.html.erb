@@ -12,6 +12,7 @@
 
    <h2>New Book</h2>
    <%= form_for @file_storage, html: { multipart: true } do |f| %>   
+      <%= f.hidden_field :user_id, :value => current_user.id %>
       <div class="form-group">
          <%= f.label :name %>   
          <%= f.text_field :name, class: "form-control" %>   

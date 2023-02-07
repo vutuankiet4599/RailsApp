@@ -26,7 +26,7 @@
    <tbody>   
       <% @file_storages.each_with_index  do |file_storage, index| %>      
          <tr>   
-            <td><p class="h4"><%= index %></p></td>
+            <td><p class="h4"><%= index+1 %></p></td>
             <td><p class="h4"><%= file_storage.name %></p></td>   
             <td><%= link_to "View file", file_storage.attachment_url, class: "btn btn-info" %></td>   
             <td><%= link_to "Download file", download_file_storage_url(id: file_storage.id), class: "btn btn-success" %></td>   
