@@ -31,6 +31,6 @@ class FileStoragesController < ApplicationController
 
   private   
   def file_storage_params   
-    params.require(:file_storage).permit(:name, :attachment)   
+    params.require(:file_storage).permit(:name, :attachment, :user_id)   
   end   
 end

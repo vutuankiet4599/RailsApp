@@ -7,30 +7,30 @@
   
 <br>   
   
-<%= link_to "New File", new_file_storage_path %>   
+<%= link_to "New File", new_file_storage_path, class: "btn btn-primary" %>   
 <br>   
 <br>   
   
-<table border="3">   
+
+<table class="table table-striped">   
    <thead>   
       <tr>   
+         <th>#</th>
          <th>Candidate Name</th>   
          <th>View file</th>   
          <th>Download file</th>
          <th>Action</th>   
-         <th>Type</th>
       </tr>   
    </thead>   
       
    <tbody>   
-      <% @file_storages.each do |file_storage| %>   
-            
+      <% @file_storages.each_with_index  do |file_storage, index| %>      
          <tr>   
-            <td><%= file_storage.name %></td>   
-            <td><%= link_to "View file", file_storage.attachment_url %></td>   
-            <td><%= link_to "Download file", download_file_storage_url(id: file_storage.id) %></td>   
-            <td><%= button_to "Delete",  file_storage, :method => :delete, confirm: "Are you sure you want to delete #{file_storage.name}?" %></td>   
-            <td><%= file_storage.attachment.content_type %></td>
+            <td><p class="h4"><%= index+1 %></p></td>
+            <td><p class="h4"><%= file_storage.name %></p></td>   
+            <td><%= link_to "View file", file_storage.attachment_url, class: "btn btn-info" %></td>   
+            <td><%= link_to "Download file", download_file_storage_url(id: file_storage.id), class: "btn btn-success" %></td>   
+            <td><%= button_to "Delete",  file_storage, :method => :delete, confirm: "Are you sure you want to delete #{file_storage.name}?", class: "btn btn-danger" %></td>   
          </tr>   
             
       <% end %>   
