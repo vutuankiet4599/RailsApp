@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  devise_scope :user do
-    match '/sign-in' => "devise/sessions#new", :as => :login
-  end
+  # devise_scope :user do
+  #   match '/sign-in' => "devise/sessions#new", :as => :login
+  # end
 end

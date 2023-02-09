@@ -1,5 +1,6 @@
 require 'rack/mime'
 class FileStoragesController < ApplicationController
+  before_action :check_login_user!
   def index
     @file_storages = FileStorage.all
   end
