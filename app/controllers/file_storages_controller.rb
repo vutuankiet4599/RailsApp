@@ -1,7 +1,12 @@
 require 'rack/mime'
 class FileStoragesController < ApplicationController
+  before_action :check_login_user!
   def index
-    @file_storages = FileStorage.all
+    if params[:id].present?
+      @file_storages = FileStorage.where(id: params[:id])
+    else
+      @file_storages = FileStorage.all
+    end
   end
 
   def new
@@ -18,10 +23,15 @@ class FileStoragesController < ApplicationController
   end
 
   def destroy
-    @file_storage = FileStorage.find(params[:id])
-    @file_storage.destroy
-    redirect_to file_storages_path, notice: 'Successfully deleted.'
+    @file_storage=FileStorage.find(params[:id])
+    if current_user == @file_storage.user
+      @file_storage.destroy
+      redirect_to file_storages_path, notice: 'Successfully deleted.'
+    else 
+      redirect_to file_storages_path, notice: 'You are not the author. Please try again.'   
+    end
   end
+    
 
   def download
     @file_storage = FileStorage.find(params[:id])
@@ -31,6 +41,6 @@ class FileStoragesController < ApplicationController
 
   private   
   def file_storage_params   
-    params.require(:file_storage).permit(:name, :attachment)   
+    params.require(:file_storage).permit(:name, :attachment, :user_id)   
   end   
 end

@@ -1,0 +1,83 @@
+.block-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .login-form{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f8f8f8;
+        width: 360px;
+        box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)}.shadow-5{box-shadow:0 1px 1px rgba(0,0,0,0.12),0 2px 2px rgba(0,0,0,0.12),0 4px 4px rgba(0,0,0,0.12),0 8px 8px rgba(0,0,0,0.12),0 16px 16px rgba(0,0,0,0.12)}.shadow-6{box-shadow:0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 8px 8px rgba(0,0,0,0.11),0 16px 16px rgba(0,0,0,0.11),0 32px 32px rgba(0,0,0,0.11)}.shadow-sharp{box-shadow:0 1px 1px rgba(0,0,0,0.25),0 2px 2px rgba(0,0,0,0.2),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.1),0 16px 16px rgba(0,0,0,0.05)}.shadow-diffuse{box-shadow:0 1px 1px rgba(0,0,0,0.08),0 2px 2px rgba(0,0,0,0.12),0 4px 4px rgba(0,0,0,0.16),0 8px 8px rgba(0,0,0,0.2)}.shadow-dreamy{box-shadow:0 1px 2px rgba(0,0,0,0.07),0 2px 4px rgba(0,0,0,0.07),0 4px 8px rgba(0,0,0,0.07),0 8px 16px rgba(0,0,0,0.07),0 16px 32px rgba(0,0,0,0.07),0 32px 64px rgba(0,0,0,0.07)}.shadow-shorter{box-shadow:0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11)}.shadow-longer{box-shadow:0 2px 1px rgba(0,0,0,0.09),0 4px 2px rgba(0,0,0,0.09),0 8px 4px rgba(0,0,0,0.09),0 16px 8px rgba(0,0,0,0.09),0 32px 16px rgba(0,0,0,0.09)
+    }
+}
+
+.edit-user-block{
+    display: flex;
+    justify-content: center;
+    .title{
+        margin-bottom: 24px;
+    }
+    .cancel-account{
+        margin-top: 48px;
+    }
+    .mb-2{
+        margin-bottom: 8px;
+    }
+    .edit{
+        margin-right: 32px;
+    }
+}
+
+.input-form{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    width: 280px;
+}
+
+.login-btn{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    width: 280px;
+    background-color: #2d8cf0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.update-btn{
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background-color: #2d8cf0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
+.cancel-btn{
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    background-color: #b24848;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+}
