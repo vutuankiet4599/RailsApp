@@ -18,11 +18,15 @@ class FileStoragesController < ApplicationController
     end
   end
 
-  def destroy
-    @file_storage = FileStorage.find(params[:id])
-    @file_storage.destroy
-    redirect_to file_storages_path, notice: 'Successfully deleted.'
-  end
+  def destroy_by_author
+    @file_storage=FileStorage.find(params[:id])
+    if current_user == @file_storage.user
+        @file_storage.destroy_by_author
+        redirect_to file_storages_path, notice: 'Successfully deleted.'
+    else notice: 'You are not the author. Please try again.'   
+      end
+    end
+    
 
   def download
     @file_storage = FileStorage.find(params[:id])
