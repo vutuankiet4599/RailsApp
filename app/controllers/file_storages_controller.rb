@@ -2,7 +2,11 @@ require 'rack/mime'
 class FileStoragesController < ApplicationController
   before_action :check_login_user!
   def index
-    @file_storages = FileStorage.all
+    if params[:id].present?
+      @file_storages = FileStorage.where(id: params[:id])
+    else
+      @file_storages = FileStorage.all
+    end
   end
 
   def new
