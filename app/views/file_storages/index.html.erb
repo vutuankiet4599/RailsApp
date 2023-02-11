@@ -1,6 +1,9 @@
 <div class="container">
   <div class="form-group custom-margin">
-    <input type="text" class="form-control" placeholder="Search for files">
+    <form action="/file_storages" method="GET">
+      <input type="text" class="form-control" placeholder="Search for files" name="name">
+      <input type="Submit" class="form-control" value="Search">
+    </form>
   </div>
   <% if !flash[:notice].blank? %>
   <div style="color: red"><%= flash[:notice] %></div>
