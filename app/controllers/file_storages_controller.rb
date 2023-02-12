@@ -2,8 +2,8 @@ require 'rack/mime'
 class FileStoragesController < ApplicationController
   before_action :check_login_user!
   def index
-    if params[:id].present?
-      @file_storages = FileStorage.where(id: params[:id])
+    if params[:name].present?
+      @file_storages = FileStorage.where('name LIKE ?', "%#{params[:name]}%")
     else
       @file_storages = FileStorage.all
     end
