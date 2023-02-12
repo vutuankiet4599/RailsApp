@@ -25,6 +25,12 @@
       
    <tbody>   
       <% @file_storages.each_with_index  do |file_storage, index| %>      
+
+      <%= form_tag(books_path, method : get) do %>
+         <%= text_field_tag :term %>
+         <%= submit_tag 'Search' %>
+      <% end %>
+
          <tr>   
             <td><p class="h4"><%= index %></p></td>
             <td><p class="h4"><%= file_storage.name %></p></td>   

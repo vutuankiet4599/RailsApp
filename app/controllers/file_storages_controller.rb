@@ -29,6 +29,30 @@ class FileStoragesController < ApplicationController
     send_file @file_storage.attachment.path, :type => @file_storage.attachment.content_type, :filename => @file_storage.name+"#{extension}", :disposition => 'attachment'
   end
 
+  def file_params
+    params.require(:).permit(:term)
+  end
+
+  def search
+    @file_storage = if params[:term]
+      file_storage.where('name LIKE ?', "%#{params[:term]}%")
+    else
+      file_storage.all
+    end
+  end
+
+  def self.search(term)
+    if term
+      where('name LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
+
+  def index1 
+    @tasks = Task.search(params[:term]) 
+  end
+
   private   
   def file_storage_params   
     params.require(:file_storage).permit(:name, :attachment)   
